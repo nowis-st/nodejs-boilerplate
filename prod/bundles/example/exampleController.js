@@ -1,0 +1,1 @@
+const someFunction=n=>{return n+10};module.exports={someFunction:someFunction};
