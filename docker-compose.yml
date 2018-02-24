@@ -1,0 +1,37 @@
+# DOCKER-COMPOSE VERSION
+version: "3.3"
+
+# DEFINE SERVICES
+services:
+  # STORM APPLICATION SERVICE
+  nodejs:
+    build:
+      # DEFINE CONTEXT INTO SERVER DIRECTORY
+      context: ./
+      # WORK WITH SPECIFIC DOCKERFILE
+      dockerfile: Dockerfile
+    container_name: nodejs
+    # RUN THIS COMMAND
+    command: npm run dev
+    # SHARED VOLUMES BETWEEN HOST AND CONTAINER
+    volumes:
+      - ./:/usr/src/app/
+      - /usr/src/app/node_modules
+    # PORT REDIRECTIONS BETWEEN HOST AND CONTAINER
+    ports:
+      # BACKEND PORT
+      - "9090:8080"
+    networks:
+      nodeProject:
+        ipv4_address: 172.50.50.1
+
+# DEFINE NETWORKS
+networks:
+  # CREATE NETWORK
+  nodeProject:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+      -
+        subnet: 172.50.50.0/16

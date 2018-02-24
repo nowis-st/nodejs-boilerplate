@@ -26,13 +26,15 @@
   },
   "homepage": "https://github.com/nowis-st/nodejs-boilerplate#readme",
   "dependencies": {
-    "body-parser": "^1.15.2",
-    "cors": "^2.8.1",
-    "express": "^4.14.0",
+    "body-parser": "1.18.x",
+    "cors": "2.8.x",
+    "express": "4.16.x",
     "file-stream-rotator": "0.0.7",
-    "helmet": "^2.2.0",
-    "log4js": "^0.6.38",
-    "morgan": "^1.7.0"
+    "helmet": "3.11.x",
+    "morgan": "1.9.x",
+    "winston": "2.4.x",
+    "winston-daily-rotate-file": "1.7.x",
+    "continuation-local-storage": "3.2.x"
   },
   "devDependencies": {
     "apidoc": "^0.17.5",
